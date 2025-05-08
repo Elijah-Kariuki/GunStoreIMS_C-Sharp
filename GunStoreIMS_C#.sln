@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GunStoreIMS_C#.API", "src\GunStoreIMS_C#.API\GunStoreIMS_C#.API.csproj", "{9A9C3027-AEDD-BDD0-BDC5-257275477373}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GunStoreIMS_C#.Application", "src\GunStoreIMS_C#.Application\GunStoreIMS_C#.Application.csproj", "{BBF4364C-7C1D-1C8E-8E08-DFBC5A21D0D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GunStoreIMS_C#.Domain", "src\GunStoreIMS_C#.Domain\GunStoreIMS_C#.Domain.csproj", "{FF5836B1-3392-C3B8-CBD0-A28C7ACC2280}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GunStoreIMS_C#.Infrastructure", "src\GunStoreIMS_C#.Infrastructure\GunStoreIMS_C#.Infrastructure.csproj", "{E3C4976F-9BA2-A485-199F-8116699C16A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GunStoreIMS_C#.Persistence", "src\GunStoreIMS_C#.Persistence\GunStoreIMS_C#.Persistence.csproj", "{66BFCD1E-4B81-7A5C-F3BF-E93AAE34C2BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A9C3027-AEDD-BDD0-BDC5-257275477373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A9C3027-AEDD-BDD0-BDC5-257275477373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A9C3027-AEDD-BDD0-BDC5-257275477373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A9C3027-AEDD-BDD0-BDC5-257275477373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBF4364C-7C1D-1C8E-8E08-DFBC5A21D0D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBF4364C-7C1D-1C8E-8E08-DFBC5A21D0D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBF4364C-7C1D-1C8E-8E08-DFBC5A21D0D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBF4364C-7C1D-1C8E-8E08-DFBC5A21D0D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF5836B1-3392-C3B8-CBD0-A28C7ACC2280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF5836B1-3392-C3B8-CBD0-A28C7ACC2280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF5836B1-3392-C3B8-CBD0-A28C7ACC2280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF5836B1-3392-C3B8-CBD0-A28C7ACC2280}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3C4976F-9BA2-A485-199F-8116699C16A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3C4976F-9BA2-A485-199F-8116699C16A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3C4976F-9BA2-A485-199F-8116699C16A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3C4976F-9BA2-A485-199F-8116699C16A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66BFCD1E-4B81-7A5C-F3BF-E93AAE34C2BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66BFCD1E-4B81-7A5C-F3BF-E93AAE34C2BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66BFCD1E-4B81-7A5C-F3BF-E93AAE34C2BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66BFCD1E-4B81-7A5C-F3BF-E93AAE34C2BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5F69C2E-13F7-4965-9764-38C4EA0D989F}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,489 @@
+# ===================================================================
+# Comprehensive .gitignore
+# Combines best practices from various sources for a wide range of project types.
+#
+# Sections:
+# 1. Global Build Artifacts (Force Ignore)
+# 2. General Build / Dependency Files
+# 3. User/IDE Specific Files (Visual Studio, VS Code, JetBrains, etc.)
+# 4. Environment & Secret Files (CRITICAL TO IGNORE)
+# 5. Logs & Debugging Artifacts
+# 6. Operating System & Editor Junk Files
+# 7. .NET / C# / ASP.NET Core Specific
+# 8. Python Specific
+# 9. Node.js / Frontend (React, Angular, Vue, TypeScript, etc.)
+# 10. Swagger / OpenAPI / NSwag
+# 11. SQL Databases (SQLite, SQL Server LocalDB)
+# 12. Docker Specific
+# 13. Flutter Specific
+# ===================================================================
+
+# ====================================
+# 1. Global Build Artifacts (Force Ignore)
+# ====================================
+# These are often generated in many subdirectories.
+# Using ** ensures they are ignored everywhere.
+**/bin/
+**/obj/
+**/out/
+
+# ====================================
+# 2. General Build / Dependency Files
+# ====================================
+# Compiled libraries, executables, and package manager files
+*.dll
+*.exe
+*.pdb
+*.nupkg
+*.snupkg
+*.deb
+*.dmg
+*.gz
+*.iso
+*.jar
+*.msi
+*.msm
+*.msp
+*.rpm
+*.tar
+*.war
+*.zip
+
+# Dependency resolution files
+project.lock.json
+project.assets.json
+packages/ # Older NuGet
+package-lock.json # npm
+yarn.lock # yarn
+composer.lock # PHP/Composer
+Podfile.lock # CocoaPods
+Cartfile.resolved # Carthage
+pubspec.lock # Dart/Flutter
+
+# Build caches and artifacts
+*.cache
+artifacts/
+build/
+dist/
+target/ # Common for Java/Rust
+
+# ====================================
+# 3. User/IDE Specific Files
+# ====================================
+# These files store user-specific settings, workspace configurations,
+# local history, etc., and should not be shared.
+
+# Visual Studio / VS .NET
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.csproj.user
+*.vbproj.user
+*.fsproj.user
+*.dbmdl # Database Model Diagram
+*.rsuser # ReSharper
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/c_cpp_properties.json # Keep if shared C/C++ config is desired
+!.vscode/cspell.json # Keep if shared spell check config is desired
+
+# JetBrains IDEs (IntelliJ IDEA, Rider, PyCharm, WebStorm, GoLand, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+*.DotSettings # ReSharper & Rider settings
+*.shelf # Shelved changes
+
+# Local History (VSCode plugin or JetBrains plugin)
+.history/
+
+# Eclipse
+.classpath
+.project
+.settings/
+*.tmp
+*.bak
+*.swp
+*~
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Xcode
+*.xcscheme
+*.xcworkspace
+xcuserdata/
+DerivedData/
+
+# Android Studio / IntelliJ (some overlap with JetBrains general)
+.gradle/
+local.properties
+captures/
+*.apk
+*.ap_
+*.aab
+
+# ====================================
+# 4. Environment & Secret Files (CRITICAL TO IGNORE)
+# ====================================
+# These files often contain sensitive information like API keys, passwords,
+# database credentials, etc. Use environment variables or dedicated secret
+# management tools instead.
+
+# General environment files
+.env
+.env.*
+!.env.example # Often good to commit an example .env file
+
+# Specific application settings files
+appsettings.json # If it contains secrets; often better to use user secrets or env vars
+appsettings.*.json # e.g., appsettings.Development.json, appsettings.Production.json
+secrets.json
+*.credentials
+*.p12
+*.pem
+*.key
+*.keystore
+*.jks
+
+# Aspire & Config (for .NET Aspire)
+aspire/
+aspire.json
+aspire.local.json
+aspire-secrets/
+aspire-dev-cert.pfx
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Serverless Framework
+.serverless/
+
+# AWS
+.aws/
+
+# Google Cloud
+.gcloud/
+
+# ====================================
+# 5. Logs & Debugging Artifacts
+# ====================================
+logs/
+*.log
+*.tlog # MSBuild Task Logging
+*.clog # Common Lisp log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lcov.info # Code coverage
+*.lcov # Code coverage
+lcov-report/ # Code coverage report
+TestResults/
+.coverage/ # Python coverage
+*.coverage # .NET coverage
+coverage.xml # .NET coverage
+profile_output/
+core.[0-9]* # Core dumps
+pid*
+*.pid
+*.seed
+*.pid.lock
+
+# ====================================
+# 6. Operating System & Editor Junk Files
+# ====================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Icon? # Custom icon files
+Thumbs.db # Windows image thumbnail cache
+
+# Linux/Unix
+*~ # Backup files
+*.swp # Vim swap files
+*.swo # Vim swap files
+
+# Windows
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk # Windows shortcuts
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# ====================================
+# 7. .NET / C# / ASP.NET Core Specific
+# ====================================
+# (Many build outputs like bin/ obj/ *.dll *.exe are covered globally or in General Build)
+# User-specific project files are covered in IDE section
+# NuGet package folder (older versions)
+# packages/ # Covered in General Build / Dependency Files
+# NuGet symbol packages
+# *.snupkg # Covered in General Build / Dependency Files
+# Roslyn
+.roslyn/
+# Entity Framework
+# *.edmx.diagram # If you don't want to commit diagrams
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+# Application Insights
+*.aiproj
+# Auto-generated UI files (example, can be project-specific)
+Generated/
+# .NET Core version lock (can be project specific)
+.NETCoreApp,Version=v*
+# NuGet local cache/config
+.nuget/
+# NuGet specification files (if generated and not source)
+# *.nuspec # Covered in General Build / Dependency Files
+# PowerShell module files (if generated)
+*.psmdcp
+# .NET template configuration
+.template.config/
+# Project fragment lock file
+project.fragment.lock.json
+
+# ====================================
+# 8. Python Specific
+# ====================================
+__pycache__/
+*.py[cod] # Compiled Python files (.pyc, .pyo, .pyd)
+*$py.class # Jython compiled files
+*.so # C extensions
+
+# Virtual environments
+venv/
+ENV/
+env/
+virtualenv/
+.venv/
+.env/ # Note: .env is also listed under secrets, be specific if using for Python env vars
+
+# Distribution / packaging
+.Python
+build/ # Covered in General Build / Dependency Files
+develop-eggs/
+dist/ # Covered in General Build / Dependency Files
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+# Usually dist/ but if outputting elsewhere
+*.spec
+
+# Mypy cache
+.mypy_cache/
+
+# Pytest cache
+.pytest_cache/
+
+# Coverage data
+# .coverage # Covered in Logs & Debugging
+# htmlcov/ # Pytest HTML coverage report
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Instance folder (Flask, etc.)
+instance/
+# SQLite database (common in Python web apps)
+# *.sqlite3 # Covered in SQL Databases
+# db.sqlite3 # Covered in SQL Databases
+
+# Django
+*.log # Covered in Logs & Debugging
+local_settings.py # For local Django settings overrides
+
+# Migrations (if they are auto-generated and re-runnable, some prefer to commit)
+# migrations/ # This is project-dependent. If you re-generate migrations, ignore. If they are source, commit.
+# For this general .gitignore, we'll assume they can be re-generated or are handled by SQL section.
+
+# ====================================
+# 9. Node.js / Frontend (React, Angular, Vue, TypeScript, etc.)
+# ====================================
+# Dependency directories
+# node_modules/ # Already globally ignored by some conventions, but good to be explicit
+node_modules/
+
+# Build output
+# dist/ # Covered in General Build / Dependency Files
+# build/ # Covered in General Build / Dependency Files
+out-tsc/ # TypeScript output
+tmp/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Angular specific environment files (often contain non-sensitive config)
+# Keep if they don't contain secrets, otherwise covered by Environment & Secret Files
+# src/environments/environment*.ts
+# !src/environments/environment.ts # Example: keep base, ignore specific like .prod.ts
+
+# Next.js
+.next/
+out/ # Covered in General Build / Dependency Files
+
+# Nuxt.js
+.nuxt/
+# dist/ # Covered in General Build / Dependency Files
+
+# Gatsby
+.cache/
+public/
+
+# Vue
+# dist/ # Covered in General Build / Dependency Files
+
+# Svelte
+.svelte-kit/
+# build/ # Covered in General Build / Dependency Files
+
+# Storybook
+storybook-static/
+
+# ====================================
+# 10. Swagger / OpenAPI / NSwag
+# ====================================
+# Generated client code or API specifications if not meant to be versioned
+swagger/
+swagger.json # If generated
+nswag/
+swagger-ui/
+nswag.json # NSwag configuration if it's local/generated
+
+# Example of a generated client (if you regenerate it often)
+# src/api/generatedClient.ts
+
+# ====================================
+# 11. SQL Databases (SQLite, SQL Server LocalDB)
+# ====================================
+# SQLite database files
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+
+# SQL Server local database files (LocalDB, Express)
+*.mdf
+*.ldf
+
+# Database backup files
+*.bak
+*.dump
+*.sql # Be careful, only ignore backups/exports, not manually written schema
+
+# Migrations & instance storage (auto-generated dev files)
+migrations/
+instance/
+db.sqlite3
+
+# Explicitly ignore all SQL scripts in this directory
+src/GunStoreIMS_C#.Infrastructure/SQL/*.sql
+
+# ====================================
+# 12. Docker Specific
+# ====================================
+.dockerignore # This file itself should be committed, but listing for completeness of Docker section
+docker-compose.override.yml # Local overrides, not for shared config
+Dockerfile # Should be committed, but listing for completeness
+*.env # Docker .env files are often for local secrets, covered in Secrets section
+*.pid # Process ID files
+*.sock # Socket files
+
+# Docker context files
+.docker/
+
+# ====================================
+# 13. Flutter Specific
+# ====================================
+# Build output
+# build/ # Covered in General Build / Dependency Files
+*.apk
+*.ipa
+*.app
+*.aab # Android App Bundle
+
+# Dart & Pub
+.dart_tool/
+.pub-cache/
+# pubspec.lock # Covered in General Build / Dependency Files
+
+# Android specific (within a Flutter project)
+android/.gradle/
+android/.idea/
+android/app/src/main/assets/flutter_assets/ # Generated assets
+android/app/local.properties # Local SDK paths, etc.
+android/app/key.jks # Signing keys (SHOULD NOT BE COMMITTED)
+android/build/ # Android build outputs
+
+# iOS specific (within a Flutter project)
+ios/.bundle/
+ios/Flutter/App.framework/ # Generated framework
+ios/Flutter/flutter_assets/ # Generated assets
+ios/Runner.xcworkspace/ # User-specific workspace data
+ios/Runner.xcodeproj/project.xcworkspace/ # User-specific workspace data
+ios/Runner.xcodeproj/xcuserdata/ # User-specific project data
+ios/Pods/ # CocoaPods dependencies (usually managed by pubspec.lock and pod install)
+ios/Podfile.lock # Covered in General Build / Dependency Files
+ios/.symlinks/
+ios/DerivedData/ # Xcode build products and indexes
+ios/Carthage/Build/ # Carthage build artifacts
+
+# IntelliJ / Android Studio related files (some overlap with general IDE section)
+*.iml
+
+# VS Code specific (within Flutter context, if not covered by general .vscode rule)
+# .vscode/launch.json # If specific to Flutter and not general workspace config
+
+# macOS files (already in OS junk, but can be explicit for Flutter context)
+# .DS_Store
+
+# Windows files (already in OS junk)
+# Thumbs.db
+# Desktop.ini
+
+# Generated plugin registrants
+ios/Runner/GeneratedPluginRegistrant.*
+android/app/src/main/java/**/GeneratedPluginRegistrant.java
